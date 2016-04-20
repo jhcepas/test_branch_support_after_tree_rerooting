@@ -5,6 +5,6 @@ do
     echo $x; 
     ./$x; 
     ./$x|ete3 view --text --attr name support --sin; 
-    ./$x|ete3 view  --attr name support --sin -i $x.png; 
+    ./$x|ete3 view  --attr name support --sin --ss -i $x.png; 
     echo;  
 done
