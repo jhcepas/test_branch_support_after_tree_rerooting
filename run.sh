@@ -28,7 +28,7 @@ echo '![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerootin
 echo dendropy
 echo '![dendropy](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_dendropy_root.py.png)'
 echo biopython
-echo '![biopython]](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_biopython.py.png)'
+echo '![biopython](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_biopython.py.png)'
 echo newick utilities
 echo '![newick_u](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_newick_utilities.sh.png)'
 echo ape
