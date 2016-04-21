@@ -88,13 +88,13 @@ test_biopython.py
     |
      \-X, 1.0
 ```
-ete3
+### ete3
 ![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ete3.py.png)
-dendropy
+### dendropy
 ![dendropy](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_dendropy_root.py.png)
-biopython
+### biopython
 ![biopython](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_biopython.py.png)
-newick utilities
+### newick utilities
 ![newick_u](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_newick_utilities.sh.png)
-ape
+### ape
 ![ape](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ape.sh.png)
