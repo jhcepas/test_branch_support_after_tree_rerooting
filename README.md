@@ -10,6 +10,10 @@ Newick utilities 1.6
 ```
 
 ## Original tree
+```
+((C:1.0,D:1.0)10:0.001,(A:1.0, (B:1.0,X:1.0)30:0.01)20:0.1,E:1.0)0:0.0;
+
+```
 ![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/original_tree.png)
 ## Tree after rooting to X
 ### test_ete3.py

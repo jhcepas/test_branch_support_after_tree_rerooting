@@ -15,6 +15,9 @@ echo
 ete3 view  --attr name support --sin --ss --sbl -i original_tree.png -t test.nw;
 
 echo '## Original tree'
+echo '```'
+cat test.nw
+echo '```'
 echo '![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/original_tree.png)' 
 
 
