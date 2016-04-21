@@ -6,8 +6,8 @@ BioPython 1.63b
 Newick utilities 1.6
 
 Testing:
-test_ete3.sh
-(X:4.5,(B:3.6,(A:2.7,((C:0.9,D:0.9)10:0.9,E:1.8)20:0.9)30:0.9)1:0.9);
+test_ete3.py
+(X:0.5,(B:1,(A:1,((C:1,D:1)10:0.001,E:1)20:0.1)30:0.01)1:0.5);
 
      /-X, 1.0
     |
@@ -22,7 +22,7 @@ test_ete3.sh
                       \-E, 1.0
 
 test_dendropy_root.py
-(X,B,(A,((C,D)10,E)0)20)30;
+(X:1.0,B:1.0,(A:1.0,((C:1.0,D:1.0)10:0.001,E:1.0)0:0.1)20:0.01)30:0.0;
 
       /-X, 1.0
      |
@@ -37,7 +37,7 @@ test_dendropy_root.py
                  \-E, 1.0
 
 test_ape.sh
-((((C,D)10,E)0,A)20,B,X)30;
+((((C:1,D:1)10:0.001,E:1)0:0.1,A:1)20:0.01,B:1,X:1)30;
 
                        /-C, 1.0
                  /, 10.0
@@ -52,7 +52,7 @@ test_ape.sh
       \-X, 1.0
 
 test_newick_utilities.sh
-(X,(B,(A,((C,D)10,E)0)20)30);
+(X:0.5,(B:1.0,(A:1.0,((C:1.0,D:1.0)10:0.001,E:1.0)0:0.1)20:0.01)30:0.5);
 
      /-X, 1.0
     |
@@ -67,7 +67,7 @@ test_newick_utilities.sh
                       \-E, 1.0
 
 test_biopython.py
-(((((C:1.00000,D:1.00000)10.00:1.00000,E:1.00000)0.00:1.00000,A:1.00000)20.00:1.00000,B:1.00000)30.00:1.00000,X:0.00000):1.00000;
+(((((C:1.00000,D:1.00000)10.00:0.00100,E:1.00000)0.00:0.10000,A:1.00000)20.00:0.01000,B:1.00000)30.00:1.00000,X:0.00000):0.00000;
 
                             /-C, 1.0
                       /, 10.0
@@ -81,3 +81,13 @@ test_biopython.py
     |
      \-X, 1.0
 
+ete3
+![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ete3.py.png)
+dendropy
+![dendropy](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_dendropy.py.png)
+biopython
+![biopython]](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_biopython.py.png)
+newick utilities
+![newick_u](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_newick_utilities.sh.png)
+ape
+![ape](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ape.py.png)

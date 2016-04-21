@@ -11,11 +11,22 @@ echo 'Testing:'
 
  
 
-for x in test_ete3.sh test_dendropy_root.py test_ape.sh test_newick_utilities.sh test_biopython.py
+for x in test_ete3.py test_dendropy_root.py test_ape.sh test_newick_utilities.sh test_biopython.py
 do 
     echo $x; 
     ./$x; 
     ./$x|ete3 view --text --attr name support --sin; 
-    ./$x|ete3 view  --attr name support --sin --ss -i $x.png; 
+    ./$x|ete3 view  --attr name support --sin --ss --sbl -i $x.png; 
     echo;  
 done
+
+echo ete3
+echo '![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ete3.py.png)'
+echo dendropy
+echo '![dendropy](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_dendropy.py.png)'
+echo biopython
+echo '![biopython]](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_biopython.py.png)'
+echo newick utilities
+echo '![newick_u](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_newick_utilities.sh.png)'
+echo ape
+echo '![ape](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ape.py.png)'

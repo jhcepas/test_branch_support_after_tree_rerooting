@@ -6,3 +6,4 @@ trees = Phylo.parse('test.nw','newick')
 t = trees.next()
 t.root_with_outgroup('X')
 Phylo.write(t, sys.stdout, 'newick')
+
