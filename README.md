@@ -3,7 +3,7 @@ Additional test cases inspiried by http://biorxiv.org/content/early/2015/12/25/0
 Software used:
 R version 3.2.0 (2015-04-16) -- "Full of Ingredients"
 ETE3 3.0.0b35
-ETE2 3.0.0b35
+ETE2 2.3.10
 Dendropy 4.1.0
 BioPython 1.63b
 Newick utilities 1.6

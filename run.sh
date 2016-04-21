@@ -5,7 +5,7 @@ echo '```'
 echo Software used:
 R --version|grep Full 
 echo 'ETE3' `ete3 version` 
-echo 'ETE2' `ete3 version` 
+echo 'ETE2' `python -c 'import ete2; print ete2.__version__'`
 echo Dendropy `python -c 'import dendropy; print dendropy.__version__'`
 echo BioPython `python -c 'import Bio; print Bio.__version__'`
 echo Newick utilities 1.6
