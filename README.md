@@ -90,7 +90,7 @@ test_biopython.py
      \-X, 1.0
 ```
 ## Original tree
-![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ete3.py.png)
+![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/original_tree.png)
 ## Tree after rooting to X
 ### ete3
 ![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ete3.py.png)
