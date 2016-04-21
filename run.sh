@@ -23,7 +23,7 @@ echo '![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerootin
 
 echo '## Tree after rooting to X' 
 
-for x in test_ete3.py test_ete2.py test_dendropy_root.py test_ape.sh test_newick_utilities.sh test_biopython.py
+for x in test_ete3.py test_ete2.py test_dendropy.py test_ape.sh test_newick_utilities.sh test_biopython.py
 do 
     echo '###' $x
     echo '```'
