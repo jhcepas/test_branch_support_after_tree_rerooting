@@ -28,12 +28,12 @@ test_ete2.py
 (X:0.5,(B:1,(A:1,((C:1,D:1)10:0.001,E:1)20:0.1)30:0.01)1:0.5);
 ```
 ![test_ete2.py](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ete2.py.png)
-### test_dendropy_root.py
+### test_dendropy.py
 ```
-test_dendropy_root.py
+test_dendropy.py
 (X:1.0,B:1.0,(A:1.0,((C:1.0,D:1.0)10:0.001,E:1.0)0:0.1)20:0.01)30:0.0;
 ```
-![test_dendropy_root.py](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_dendropy_root.py.png)
+![test_dendropy.py](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_dendropy.py.png)
 ### test_ape.sh
 ```
 test_ape.sh
