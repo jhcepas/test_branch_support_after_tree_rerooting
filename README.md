@@ -1,5 +1,6 @@
 Additional test cases inspiried by http://biorxiv.org/content/early/2015/12/25/035360
 ```
+Software used:
 R version 3.2.0 (2015-04-16) -- "Full of Ingredients"
 ETE 3.0.0b35
 Dendropy 4.1.0
@@ -7,7 +8,7 @@ BioPython 1.63b
 Newick utilities 1.6
 ```
 
-Testing:
+Test output:
 ```
 test_ete3.py
 (X:0.5,(B:1,(A:1,((C:1,D:1)10:0.001,E:1)20:0.1)30:0.01)1:0.5);
@@ -88,6 +89,9 @@ test_biopython.py
     |
      \-X, 1.0
 ```
+## Original tree
+![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ete3.py.png)
+## Tree after rooting to X
 ### ete3
 ![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ete3.py.png)
 ### dendropy
