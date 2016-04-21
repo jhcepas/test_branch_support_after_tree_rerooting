@@ -1,11 +1,13 @@
 #! /bin/bash 
 echo 'Additional test cases inspiried by http://biorxiv.org/content/early/2015/12/25/035360'
+
+echo '```'
 R --version|grep Full 
 echo 'ETE' `ete3 version` 
 echo Dendropy `python -c 'import dendropy; print dendropy.__version__'`
 echo BioPython `python -c 'import Bio; print Bio.__version__'`
 echo Newick utilities 1.6
-
+echo '```'
 echo 
 echo 'Testing:'
 
