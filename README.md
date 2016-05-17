@@ -62,6 +62,6 @@ test_biopython.py
 ### test_bioperl.sh
 ```
 test_bioperl.sh
-((B:1.0,(A:1.0,((C:1.0,D:1.0)10:0.001,E:1.0)0:0.1)20:0.01)30:1,X);
+((B:1.0,(A:1.0,((C:1.0,D:1.0)10:0.001,E:1.0)0:0.1)20:0.01)30:1,X:0);
 ```
 ![test_bioperl.sh](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_bioperl.sh.png)
