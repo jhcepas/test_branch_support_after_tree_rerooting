@@ -7,6 +7,7 @@ ETE2 2.3.10
 Dendropy 4.1.0
 BioPython 1.63b
 Newick utilities 1.6
+BioPerl 1.006925
 ```
 
 ## Original tree
@@ -52,3 +53,8 @@ test_biopython.py
 (((((C:1.00000,D:1.00000)10.00:0.00100,E:1.00000)0.00:0.10000,A:1.00000)20.00:0.01000,B:1.00000)30.00:1.00000,X:0.00000):0.00000;
 ```
 ![test_biopython.py](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_biopython.py.png)
+### test_bioperl.sh
+```
+test_bioperl.sh
+((B:1.0,(A:1.0,((C:1.0,D:1.0)10:0.001,E:1.0)0:0.1)20:0.01)30:1,X);```
+![test_bioperl.sh](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_bioperl.sh.png)
