@@ -8,6 +8,7 @@ Dendropy 4.1.0
 BioPython 1.63b
 Newick utilities 1.6
 BioPerl 1.006925
+PyCogent 1.5.3
 ```
 
 ## Original tree
@@ -65,3 +66,10 @@ test_bioperl.sh
 ((B:1.0,(A:1.0,((C:1.0,D:1.0)10:0.001,E:1.0)0:0.1)20:0.01)30:1,X:0);
 ```
 ![test_bioperl.sh](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_bioperl.sh.png)
+### test_pycogent.py
+```
+test_pycogent.py
+(B:1.0,X:1.0,(A:1.0,((C:1.0,D:1.0)10:0.001,E:1.0)20:0.1)30:0.01);
+
+```
+![test_pycogent.py](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_pycogent.py.png)
