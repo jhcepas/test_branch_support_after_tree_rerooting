@@ -30,6 +30,7 @@ do
     echo '```'
     echo $x; 
     ./$x; 
+    echo
     echo '```';  
     #./$x|ete3 view --text --attr name support --sin; 
     ./$x |ete3 view  --attr name support --sin --ss --sbl -i $x.png; 
