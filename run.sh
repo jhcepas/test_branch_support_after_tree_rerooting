@@ -11,6 +11,7 @@ echo BioPython `python -c 'import Bio; print Bio.__version__'`
 echo Newick utilities 1.6
 echo BioPerl `perl -e 'use Bio::Perl; print Bio::Perl->VERSION."\n"'`
 echo PyCogent `python -c 'import cogent; print cogent.__version__'`
+echo '```'
 
 echo "###Relevant discussion:"
 echo BioPython: https://github.com/biopython/biopython/issues/745
@@ -18,7 +19,6 @@ echo Dendropy: https://github.com/tjunier/newick_utils/issues/15
 echo BioPerl: https://github.com/bioperl/bioperl-live/issues/157
 echo newick-utilities: https://github.com/tjunier/newick_utils/issues/15
 
-echo '```'
 echo 
 
 ete3 view  --attr name support --sin --ss --sbl -i original_tree.png -t test.nw;

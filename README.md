@@ -9,12 +9,12 @@ BioPython 1.63b
 Newick utilities 1.6
 BioPerl 1.006925
 PyCogent 1.5.3
+```
 ###Relevant discussion:
 BioPython: https://github.com/biopython/biopython/issues/745
 Dendropy: https://github.com/tjunier/newick_utils/issues/15
 BioPerl: https://github.com/bioperl/bioperl-live/issues/157
 newick-utilities: https://github.com/tjunier/newick_utils/issues/15
-```
 
 ## Original tree
 ```
