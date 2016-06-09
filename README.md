@@ -12,8 +12,11 @@ PyCogent 1.5.3
 ```
 ###Relevant discussion:
 BioPython: https://github.com/biopython/biopython/issues/745
-Dendropy: https://github.com/tjunier/newick_utils/issues/15
+
+Dendropy: https://github.com/jeetsukumaran/DendroPy/issues/53
+
 BioPerl: https://github.com/bioperl/bioperl-live/issues/157
+
 newick-utilities: https://github.com/tjunier/newick_utils/issues/15
 
 ## Original tree

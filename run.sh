@@ -15,10 +15,12 @@ echo '```'
 
 echo "###Relevant discussion:"
 echo BioPython: https://github.com/biopython/biopython/issues/745
-echo Dendropy: https://github.com/tjunier/newick_utils/issues/15
+echo
+echo Dendropy: https://github.com/jeetsukumaran/DendroPy/issues/53
+echo
 echo BioPerl: https://github.com/bioperl/bioperl-live/issues/157
+echo
 echo newick-utilities: https://github.com/tjunier/newick_utils/issues/15
-
 echo 
 
 ete3 view  --attr name support --sin --ss --sbl -i original_tree.png -t test.nw;
