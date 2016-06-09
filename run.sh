@@ -27,7 +27,12 @@ echo '## Tree after rooting to X'
 
 for x in test_ete3.py test_ete2.py test_dendropy.py test_ape.sh test_newick_utilities.sh test_biopython.py test_bioperl.sh test_pycogent.py
 do 
+
     echo '###' $x
+    echo '```'
+    cat $x
+    echo '```'
+
     echo '```'
     echo $x; 
     ./$x; 
