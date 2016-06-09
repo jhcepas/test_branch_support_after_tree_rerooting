@@ -7,4 +7,5 @@ t = trees.next()
 t.root_with_outgroup('X')
 Phylo.write(t, sys.stdout, 'newick')
 
-# Related discussion: https://github.com/biopython/biopython/issues/745
+
+

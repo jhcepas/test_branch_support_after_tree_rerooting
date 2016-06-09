@@ -9,6 +9,11 @@ BioPython 1.63b
 Newick utilities 1.6
 BioPerl 1.006925
 PyCogent 1.5.3
+###Relevant discussion:
+BioPython: https://github.com/biopython/biopython/issues/745
+Dendropy: https://github.com/tjunier/newick_utils/issues/15
+BioPerl: https://github.com/bioperl/bioperl-live/issues/157
+newick-utilities: https://github.com/tjunier/newick_utils/issues/15
 ```
 
 ## Original tree
@@ -119,7 +124,8 @@ t = trees.next()
 t.root_with_outgroup('X')
 Phylo.write(t, sys.stdout, 'newick')
 
-# Related discussion: https://github.com/biopython/biopython/issues/745
+
+
 ```
 ```
 (((((C:1.00000,D:1.00000)10.00:0.00100,E:1.00000)0.00:0.10000,A:1.00000)20.00:0.01000,B:1.00000)30.00:1.00000,X:0.00000):0.00000;
