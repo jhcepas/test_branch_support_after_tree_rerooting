@@ -29,12 +29,16 @@ for x in test_ete3.py test_ete2.py test_dendropy.py test_ape.sh test_newick_util
 do 
 
     echo '###' $x
-    echo '```'
+    if [[ $x  =~ .*\.py ]]
+    then
+        echo '```python'
+    else
+        echo '```bash'
+    fi
     cat $x
     echo '```'
 
     echo '```'
-    echo $x; 
     ./$x; 
     echo
     echo '```';  

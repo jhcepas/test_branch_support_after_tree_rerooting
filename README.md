@@ -19,7 +19,7 @@ PyCogent 1.5.3
 ![ete3](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/original_tree.png)
 ## Tree after rooting to X
 ### test_ete3.py
-```
+```python
 #! /usr/bin/python
 
 from ete3 import Tree
@@ -28,13 +28,12 @@ t.set_outgroup(t & "X")
 print t.write()
 ```
 ```
-test_ete3.py
 (X:0.5,(B:1,(A:1,((C:1,D:1)10:0.001,E:1)20:0.1)30:0.01)1:0.5);
 
 ```
 ![test_ete3.py](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ete3.py.png)
 ### test_ete2.py
-```
+```python
 #! /usr/bin/python
 
 from ete2 import Tree
@@ -43,13 +42,12 @@ t.set_outgroup(t & "X")
 print t.write()
 ```
 ```
-test_ete2.py
 (X:0.5,(B:1,(A:1,((C:1,D:1)10:0.001,E:1)20:0.1)30:0.01)1:0.5);
 
 ```
 ![test_ete2.py](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ete2.py.png)
 ### test_dendropy.py
-```
+```python
 #! /usr/bin/env python
 
 from dendropy import Tree, TaxonNamespace
@@ -85,35 +83,32 @@ nw = tree.as_string(schema='newick').strip()
 print nw.replace('[&R] ', '')
 ```
 ```
-test_dendropy.py
 (B:1.0,X:1.0,(A:1.0,((C:1.0,D:1.0)10.0:0.001,E:1.0)20.0:0.1)30.0:0.01);
 
 ```
 ![test_dendropy.py](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_dendropy.py.png)
 ### test_ape.sh
-```
+```bash
 #! /bin/bash
 R --quiet --vanilla < test_ape.R |grep "\[1\]"|cut -f2 -d " "|cut -f2 -d '"' 
 ```
 ```
-test_ape.sh
 ((((C:1,D:1)10:0.001,E:1)0:0.1,A:1)20:0.01,B:1,X:1)30;
 
 ```
 ![test_ape.sh](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_ape.sh.png)
 ### test_newick_utilities.sh
-```
+```bash
 #! /bin/bash 
 ./nw_reroot test.nw X
 ```
 ```
-test_newick_utilities.sh
 (X:0.5,(B:1.0,(A:1.0,((C:1.0,D:1.0)10:0.001,E:1.0)0:0.1)20:0.01)30:0.5);
 
 ```
 ![test_newick_utilities.sh](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_newick_utilities.sh.png)
 ### test_biopython.py
-```
+```python
 #! /usr/bin/env python
 
 import sys
@@ -125,25 +120,23 @@ Phylo.write(t, sys.stdout, 'newick')
 
 ```
 ```
-test_biopython.py
 (((((C:1.00000,D:1.00000)10.00:0.00100,E:1.00000)0.00:0.10000,A:1.00000)20.00:0.01000,B:1.00000)30.00:1.00000,X:0.00000):0.00000;
 
 ```
 ![test_biopython.py](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_biopython.py.png)
 ### test_bioperl.sh
-```
+```bash
 #!/bin/sh
 
 # Fixes the newick output of bioperl so it can be read by ete
 ./test_bioperl.pl |sed  's/)X/,X:0)/g'
 ```
 ```
-test_bioperl.sh
 ((B:1.0,(A:1.0,((C:1.0,D:1.0)10:0.001,E:1.0)0:0.1)20:0.01)30:1,X:0);
 ```
 ![test_bioperl.sh](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_bioperl.sh.png)
 ### test_pycogent.py
-```
+```python
 #!/usr/bin/env python
 
 from cogent import LoadTree
@@ -152,7 +145,6 @@ print tr.rootedWithTip("X")
 
 ```
 ```
-test_pycogent.py
 (B:1.0,X:1.0,(A:1.0,((C:1.0,D:1.0)10:0.001,E:1.0)20:0.1)30:0.01);
 
 ```
