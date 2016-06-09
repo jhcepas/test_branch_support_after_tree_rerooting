@@ -81,6 +81,8 @@ tree = Tree.get(file=open('test.nw'), schema="newick")#, rooting="force-rooted")
 rooted_bipartition_method(tree, 'X')
 nw = tree.as_string(schema='newick').strip()
 print nw.replace('[&R] ', '')
+
+# Related discussion: https://github.com/jeetsukumaran/DendroPy/issues/53
 ```
 ```
 (B:1.0,X:1.0,(A:1.0,((C:1.0,D:1.0)10.0:0.001,E:1.0)20.0:0.1)30.0:0.01);
@@ -118,6 +120,7 @@ t = trees.next()
 t.root_with_outgroup('X')
 Phylo.write(t, sys.stdout, 'newick')
 
+# Related discussion: https://github.com/biopython/biopython/issues/745
 ```
 ```
 (((((C:1.00000,D:1.00000)10.00:0.00100,E:1.00000)0.00:0.10000,A:1.00000)20.00:0.01000,B:1.00000)30.00:1.00000,X:0.00000):0.00000;
@@ -142,6 +145,7 @@ Phylo.write(t, sys.stdout, 'newick')
 from cogent import LoadTree
 tr = LoadTree('test.nw')
 print tr.rootedWithTip("X")
+
 
 ```
 ```

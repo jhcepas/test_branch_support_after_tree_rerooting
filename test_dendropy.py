@@ -31,3 +31,5 @@ tree = Tree.get(file=open('test.nw'), schema="newick")#, rooting="force-rooted")
 rooted_bipartition_method(tree, 'X')
 nw = tree.as_string(schema='newick').strip()
 print nw.replace('[&R] ', '')
+
+# Related discussion: https://github.com/jeetsukumaran/DendroPy/issues/53
