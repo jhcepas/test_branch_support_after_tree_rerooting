@@ -53,15 +53,14 @@ print t.write()
 from dendropy import Tree, TaxonNamespace
 
 def node_label_method(tree, outgroup):
-    '''Do not interpret node labels as branch support values'''    
+    '''Interpret node labels as node attributes (default).'''    
     outgroup_node = tree.find_node_with_taxon_label(outgroup)
     new_root = outgroup_node.parent_node
     tree.reseed_at(new_root)
     return tree
 
 def rooted_bipartition_method(tree, outgroup):
-    '''Interpret node labels as branch support values, do they
-    are remapped to branches when tree outgroup changes.'''
+    '''Interpret node labels as branch support values.'''
 
     benc = tree.encode_bipartitions()
     support_values = {}
