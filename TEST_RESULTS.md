@@ -114,7 +114,7 @@ R --quiet --vanilla < test_ape.R |grep "\[1\]"|cut -f2 -d " "|cut -f2 -d '"'
 R --quiet --vanilla < test_patched_ape.R |grep "\[1\]"|cut -f2 -d " "|cut -f2 -d '"' 
 ```
 ```
-((((C:1,D:1)10:0.001,E:1)0:0.1,A:1)20:0.01,B:1,X:1)30;
+((((C:1,D:1)10:0.001,E:1)20:0.1,A:1)30:0.01,B:1,X:1);
 
 ```
 ![test_patched_ape.sh](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_patched_ape.sh.png)

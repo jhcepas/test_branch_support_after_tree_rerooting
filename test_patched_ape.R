@@ -1,5 +1,5 @@
 library("ape")
-if (packageVersion("ape") < "3.6") source("new_root.R")
+source("new_root.R")
 tr <- read.tree("test.nw")
-tr <- root(tr, "X")
+tr <- root(tr, "X", edgelabel = TRUE)
 write.tree(tr)
