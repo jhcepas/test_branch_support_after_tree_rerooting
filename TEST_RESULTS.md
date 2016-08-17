@@ -115,7 +115,8 @@ R --quiet --vanilla < test_ape.R |grep "\[1\]"|cut -f2 -d " "|cut -f2 -d '"'
 library("ape")
 tr <- read.tree("test.nw")
 tr <- root(tr, "X")
-write.tree(tr)```
+write.tree(tr)
+```
 Resulting newick:
 ```
 ((((C:1,D:1)10:0.001,E:1)0:0.1,A:1)20:0.01,B:1,X:1)30;
@@ -134,7 +135,8 @@ library("ape")
 source("new_root.R")
 tr <- read.tree("test.nw")
 tr <- root(tr, "X", edgelabel = TRUE)
-write.tree(tr)```
+write.tree(tr)
+```
 Resulting newick:
 ```
 ((((C:1,D:1)10:0.001,E:1)20:0.1,A:1)30:0.01,B:1,X:1);
