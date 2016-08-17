@@ -38,17 +38,27 @@ echo '## Tree after rooting to X'
 
 for x in test_ete3.py test_ete2.py test_dendropy.py test_ape.sh test_patched_ape.sh test_newick_utilities.sh test_biopython.py test_bioperl.sh test_pycogent.py
 do 
-
     echo '###' $x
-    if [[ $x  =~ .*\.py ]]
-    then
-        echo '```python'
-    else
-        echo '```bash'
-    fi
-    cat $x
-    echo '```'
+    for ext in .sh .py .pl .R; do  
+        base=`echo $x|cut -f1 -d'.'`$ext
+        if [[ ! -f $base ]]; then
+            continue
+        fi
 
+        echo '####' $base
+        if [[ $base  =~ .*\.py ]]; then
+            echo '```python'
+        elif [[ $base  =~ .*\.R ]]; then
+            echo '```R'
+        elif [[ $base  =~ .*\.sh ]]; then
+            echo '```bash'
+        else
+            echo '```'
+        fi
+        #cat $base
+        echo '```'
+    done
+    echo Resulting newick:
     echo '```'
     ./$x; 
     echo
