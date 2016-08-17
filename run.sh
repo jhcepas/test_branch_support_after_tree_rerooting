@@ -1,5 +1,5 @@
 #! /bin/bash 
-echo 'Additional test cases inspiried by http://biorxiv.org/content/early/2015/12/25/035360'
+echo 'Test case examples for bioinformatic toolkits discussed in http://biorxiv.org/content/early/2015/12/25/035360'
 
 echo '```'
 echo Software used:

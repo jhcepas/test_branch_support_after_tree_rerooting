@@ -1,4 +1,4 @@
-Additional test cases inspiried by http://biorxiv.org/content/early/2015/12/25/035360
+Test case examples for bioinformatic toolkits discussed in http://biorxiv.org/content/early/2015/12/25/035360
 ```
 Software used:
 R version 3.2.0 (2015-04-16) -- "Full of Ingredients"
