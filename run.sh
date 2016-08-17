@@ -44,7 +44,6 @@ do
         if [[ ! -f $base ]]; then
             continue
         fi
-
         echo '####' $base
         if [[ $base  =~ .*\.py ]]; then
             echo '```python'
@@ -55,7 +54,7 @@ do
         else
             echo '```'
         fi
-        #cat $base
+        cat $base
         echo '```'
     done
     echo Resulting newick:

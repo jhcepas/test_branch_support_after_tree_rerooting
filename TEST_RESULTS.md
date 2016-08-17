@@ -31,6 +31,12 @@ Scikit-bio/PyCogent: https://github.com/biocore/scikit-bio/issues/1355
 ### test_ete3.py
 #### test_ete3.py
 ```python
+#! /usr/bin/python
+
+from ete3 import Tree
+t = Tree('test.nw')
+t.set_outgroup(t & "X")
+print t.write()
 ```
 Resulting newick:
 ```
@@ -41,6 +47,12 @@ Resulting newick:
 ### test_ete2.py
 #### test_ete2.py
 ```python
+#! /usr/bin/python
+
+from ete2 import Tree
+t = Tree('test.nw')
+t.set_outgroup(t & "X")
+print t.write()
 ```
 Resulting newick:
 ```
@@ -51,6 +63,40 @@ Resulting newick:
 ### test_dendropy.py
 #### test_dendropy.py
 ```python
+#! /usr/bin/env python
+
+from dendropy import Tree, TaxonNamespace
+
+def node_label_method(tree, outgroup):
+    '''Interpret node labels as node attributes (default).'''    
+    outgroup_node = tree.find_node_with_taxon_label(outgroup)
+    new_root = outgroup_node.parent_node
+    tree.reseed_at(new_root)
+    return tree
+
+def rooted_bipartition_method(tree, outgroup):
+    '''Interpret node labels as branch support values.'''
+
+    benc = tree.encode_bipartitions()
+    support_values = {}
+    for nd in tree:
+        support_values[nd.bipartition] = float(nd.label) if nd.label is not None else 1.0
+
+    outgroup_node = tree.find_node_with_taxon_label(outgroup)
+    new_root = outgroup_node.parent_node
+    tree.reseed_at(new_root)
+    tree.encode_bipartitions()
+    for nd in tree:
+        nd.label = support_values.get(nd.bipartition, "not_specified")
+    tree.seed_node.edge.length = None
+    return tree
+
+tree = Tree.get(file=open('test.nw'), schema="newick")#, rooting="force-rooted")
+rooted_bipartition_method(tree, 'X')
+nw = tree.as_string(schema='newick').strip()
+print nw.replace('[&R] ', '')
+
+# Related discussion: https://github.com/jeetsukumaran/DendroPy/issues/53
 ```
 Resulting newick:
 ```
@@ -61,10 +107,15 @@ Resulting newick:
 ### test_ape.sh
 #### test_ape.sh
 ```bash
+#! /bin/bash
+R --quiet --vanilla < test_ape.R |grep "\[1\]"|cut -f2 -d " "|cut -f2 -d '"' 
 ```
 #### test_ape.R
 ```R
-```
+library("ape")
+tr <- read.tree("test.nw")
+tr <- root(tr, "X")
+write.tree(tr)```
 Resulting newick:
 ```
 ((((C:1,D:1)10:0.001,E:1)0:0.1,A:1)20:0.01,B:1,X:1)30;
@@ -74,10 +125,16 @@ Resulting newick:
 ### test_patched_ape.sh
 #### test_patched_ape.sh
 ```bash
+#! /bin/bash
+R --quiet --vanilla < test_patched_ape.R |grep "\[1\]"|cut -f2 -d " "|cut -f2 -d '"' 
 ```
 #### test_patched_ape.R
 ```R
-```
+library("ape")
+source("new_root.R")
+tr <- read.tree("test.nw")
+tr <- root(tr, "X", edgelabel = TRUE)
+write.tree(tr)```
 Resulting newick:
 ```
 ((((C:1,D:1)10:0.001,E:1)20:0.1,A:1)30:0.01,B:1,X:1);
@@ -87,6 +144,8 @@ Resulting newick:
 ### test_newick_utilities.sh
 #### test_newick_utilities.sh
 ```bash
+#! /bin/bash 
+./nw_reroot test.nw X
 ```
 Resulting newick:
 ```
@@ -97,6 +156,17 @@ Resulting newick:
 ### test_biopython.py
 #### test_biopython.py
 ```python
+#! /usr/bin/env python
+
+import sys
+from Bio import Phylo
+trees = Phylo.parse('test.nw','newick')
+t = trees.next()
+t.root_with_outgroup('X')
+Phylo.write(t, sys.stdout, 'newick')
+
+
+
 ```
 Resulting newick:
 ```
@@ -107,9 +177,31 @@ Resulting newick:
 ### test_bioperl.sh
 #### test_bioperl.sh
 ```bash
+#!/bin/sh
+
+# Fixes the newick output of bioperl so it can be read by ete
+./test_bioperl.pl |sed  's/)X/,X:0)/g'
 ```
 #### test_bioperl.pl
 ```
+#!/usr/bin/perl
+use warnings;
+use strict;
+use Bio::TreeIO;
+use IO::String;
+my $treeio = Bio::TreeIO->new(-file   => "test.nw",
+                              -format => 'newick');
+my $tree = $treeio->next_tree;
+my $node = $tree->find_node(-id => 'X');
+$tree->reroot($node);
+
+my $out = new Bio::TreeIO(-format => 'newick');
+$out->write_tree($tree); 
+
+
+
+
+
 ```
 Resulting newick:
 ```
@@ -119,6 +211,13 @@ Resulting newick:
 ### test_pycogent.py
 #### test_pycogent.py
 ```python
+#!/usr/bin/env python
+
+from cogent import LoadTree
+tr = LoadTree('test.nw')
+print tr.rootedWithTip("X")
+
+
 ```
 Resulting newick:
 ```
