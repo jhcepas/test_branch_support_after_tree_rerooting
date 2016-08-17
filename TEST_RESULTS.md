@@ -181,23 +181,27 @@ Resulting newick:
 ```bash
 #!/bin/sh
 
-# Fixes the newick output of bioperl so it can be read by ete
-./test_bioperl.pl |sed  's/)X/,X:0)/g'
+# Fixes the newick output of bioperl so it can be read by ete for automatically
+# generating an img
+./test_bioperl.pl |sed  's/)X/,X:0)/g'|python nhx2nw.py
+
+
 ```
 #### test_bioperl.pl
-```
+```perl
 #!/usr/bin/perl
 use warnings;
 use strict;
 use Bio::TreeIO;
 use IO::String;
 my $treeio = Bio::TreeIO->new(-file   => "test.nw",
-                              -format => 'newick');
+                              -format => 'newick', 
+                              -internal_node_id => 'bootstrap');
 my $tree = $treeio->next_tree;
 my $node = $tree->find_node(-id => 'X');
 $tree->reroot($node);
 
-my $out = new Bio::TreeIO(-format => 'newick');
+my $out = new Bio::TreeIO(-format => 'nhx');
 $out->write_tree($tree); 
 
 
@@ -207,7 +211,8 @@ $out->write_tree($tree);
 ```
 Resulting newick:
 ```
-((B:1.0,(A:1.0,((C:1.0,D:1.0)10:0.001,E:1.0)0:0.1)20:0.01)30:1,X:0);
+((B:1,(A:1,((C:1,D:1)10:0.001,E:1)20:0.1)30:0.01)0:1,X:0);
+
 ```
 ![test_bioperl.sh](https://github.com/jhcepas/test_branch_support_after_tree_rerooting/blob/master/test_bioperl.sh.png)
 ### test_pycogent.py

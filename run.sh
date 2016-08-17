@@ -51,6 +51,8 @@ do
             echo '```R'
         elif [[ $base  =~ .*\.sh ]]; then
             echo '```bash'
+        elif [[ $base  =~ .*\.pl ]]; then
+            echo '```perl'
         else
             echo '```'
         fi
