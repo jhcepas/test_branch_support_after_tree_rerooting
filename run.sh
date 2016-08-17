@@ -22,6 +22,8 @@ echo BioPerl: https://github.com/bioperl/bioperl-live/issues/157
 echo
 echo newick-utilities: https://github.com/tjunier/newick_utils/issues/15
 echo 
+echo Scikit-bio/PyCogent: https://github.com/biocore/scikit-bio/issues/1355
+echo
 
 ete3 view  --attr name support --sin --ss --sbl -i original_tree.png -t test.nw;
 
